@@ -1,0 +1,22 @@
+<launch>
+  <arg name="multimap_file" default="$(find multilevel_navigation)/maps/multimap/multimap.yaml" />
+
+  <node name="multi_level_map_server" pkg="multi_level_map_server" type="multi_level_map_server">
+    <param name="map_file" value="$(arg multimap_file)" />
+  </node>
+
+  <param name="level_mux/default_current_level" value="1stFloor" />
+  <node name="level_mux" pkg="multi_level_map_utils" type="level_mux">
+    <param name="global_frame_id" value="level_mux_map" />
+  </node>
+  
+  <!-- turtlebot map machen -->
+  
+  <!-- turtlebot anpassen -->
+  
+  <!-- smach -->
+  
+  <!-- wie heraus finden ziel ist auf anderem map -->
+  
+
+</launch>
